@@ -24,7 +24,11 @@ class HomeTableTableViewController: UITableViewController {
         tableView.refreshControl = myRefreshControl
 
     }
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        loadTweets()
+    }
+    
     // MARK: - Table view data source
     
     
@@ -60,6 +64,8 @@ class HomeTableTableViewController: UITableViewController {
             loadMoreTweets()
         }
     }
+    
+    
     
     
     func loadMoreTweets(){
